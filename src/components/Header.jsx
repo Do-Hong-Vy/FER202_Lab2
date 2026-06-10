@@ -36,7 +36,9 @@ function Header({ cartQuantity }) {
           <Nav>
             <Nav.Link href="#cart" className="d-flex align-items-center gap-1">
               <FaShoppingCart size={20} className="text-white" />
-              <span className="fw-bold text-white">{cartQuantity}</span>
+              <Badge bg="transparent" className="text-white p-0 ms-1 fs-6 fw-bold">
+                {cartQuantity}
+              </Badge>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
