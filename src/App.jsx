@@ -4,11 +4,20 @@ import Banner from "./components/Banner";
 import ProductList from "./components/ProductList";
 import Footer from "./components/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { products as initialProducts } from "./data/product";
 
 function App() {
   const [cartQuantity, setCartQuantity] = useState(0);
+  const [productList, setProductList] = useState(initialProducts);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (productId) => {
+    setProductList((prevList) =>
+      prevList.map((p) =>
+        p.id === productId && p.quantity > 0
+          ? { ...p, quantity: p.quantity - 1 }
+          : p
+      )
+    );
     setCartQuantity((prev) => prev + 1);
   };
 
@@ -18,7 +27,7 @@ function App() {
       <main className="flex-grow-1">
         <Banner />
         <div className="container my-5">
-          <ProductList onAddToCart={handleAddToCart} />
+          <ProductList products={productList} onAddToCart={handleAddToCart} />
         </div>
       </main>
       <Footer />
