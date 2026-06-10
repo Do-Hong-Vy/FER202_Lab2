@@ -13,7 +13,7 @@ function ProductCard({ product, onAddToCart }) {
 
   return (
     <Card className="h-100 shadow-sm border-0">
-      <div className="position-relative bg-light" style={{ aspectRatio: '3/4' }}>
+      <div className="position-relative bg-light" style={{ aspectRatio: '1/1' }}>
         <Card.Img 
           variant="top" 
           src={product.image} 

@@ -9,7 +9,7 @@ function ProductList({ onAddToCart }) {
         <h2 className="fw-bold text-uppercase">Featured Products</h2>
         <hr className="w-25 mx-auto text-primary border-3 opacity-75" />
       </div>
-      <Row className="g-4">
+      <Row className="g-4 justify-content-center mx-auto" style={{ maxWidth: '1000px' }}>
         {products.map((product) => (
           <Col key={product.id} xs={12} sm={6} md={4} lg={4}>
             <ProductCard product={product} onAddToCart={onAddToCart} />
